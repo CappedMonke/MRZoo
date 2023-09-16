@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class GameInitializer : MonoBehaviour
 {
+    public void InitializeGame()
+    {
+        
+    }
     
-
-
     public void CreateGrid()
     {
 
