@@ -33,6 +33,8 @@ public class KeepObjectInView : MonoBehaviour
         {
             StartCoroutine(MoveToCameraCenter());
         }
+        
+        transform.rotation = CameraTransform.rotation;
     }
 
     private IEnumerator MoveToCameraCenter()
@@ -47,9 +49,6 @@ public class KeepObjectInView : MonoBehaviour
             transform.position = Vector3.Lerp(initialTransform.position,
                 CameraTransform.position + CameraTransform.forward * DistanceFromCamera,
                 elapsedTime / MovingTime);
-            transform.rotation = Quaternion.Lerp(initialTransform.rotation,
-                CameraTransform.rotation,
-                elapsedTime / MovingTime);
             
             elapsedTime += Time.deltaTime;
 
@@ -57,7 +56,7 @@ public class KeepObjectInView : MonoBehaviour
         }
 
         transform.position = CameraTransform.position + CameraTransform.forward * DistanceFromCamera;
-        transform.rotation = CameraTransform.rotation;
+        
 
         IsCoroutineRunning = false;
     }
