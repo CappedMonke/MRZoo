@@ -645,7 +645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TileSize: 0.05
-  EmptyTile: {fileID: 8897421957941240576, guid: b390aa3e75d32724da4b4dd141137175, type: 3}
+  Tile: {fileID: -1673554482541983689, guid: b390aa3e75d32724da4b4dd141137175, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

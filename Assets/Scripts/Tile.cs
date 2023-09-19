@@ -6,19 +6,10 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public List<Tile> Neighbors = new();
+    public TextMesh TileIndexText;
 
-    private void Start()
+    public void DropDown()
     {
-        if (Neighbors.Count < 4)
-        {
-            StartCoroutine(DestroyAll());
-        }
-    }
-
-    private IEnumerator DestroyAll()
-    {
-        yield return new WaitForSeconds(3);
-        
-        gameObject.SetActive(false);
+        // TODO: Handle logic to make it look cool when the tiles drop down.
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Microsoft.MixedReality.Toolkit.SpatialAwareness.Processing;
 using UnityEngine;
@@ -75,36 +76,16 @@ public class GameBoard : MonoBehaviour
 
     private void SetupTiles()
     {
-        for (var z = 0; z < _tilesInX; z++)
+        // Add neighbors for each tile
+        for(var i = 0; i < _tilesInX * _tilesInZ; i++)
         {
-            for (var x = 0; x < _tilesInZ; x++)
-            {
-                var tile = _tiles[x + _tilesInZ * z];
+            var tile = _tiles[i];
+            tile.TileIndexText.text = i.ToString();
 
-                if (z > 0)
-                {
-                    tile.Neighbors.Add(_tiles[x + _tilesInX * (z - 1)]);
-                }
-                    
-
-                    if (z < _tilesInZ - 1)
-                    {
-                        tile.Neighbors.Add(_tiles[x + _tilesInX * (z + 1)]);
-                    }
-                    
-
-                    if (x > 0)
-                    {
-                        tile.Neighbors.Add(_tiles[(x - 1) + _tilesInX * z]);
-                    }
-                    
-
-                    if (x < _tilesInX - 1)
-                    {
-                        tile.Neighbors.Add(_tiles[(x + 1) + _tilesInX * z]);
-                    }
-                    
-            }
+            if (i > 0) tile.Neighbors.Add(_tiles[i - 1]);
+            if (i < _tilesInX * _tilesInZ - 1) tile.Neighbors.Add(_tiles[i + 1]);
+            if (i > _tilesInZ) tile.Neighbors.Add(_tiles[i - _tilesInZ]);
+            if (i < _tilesInX * _tilesInZ - _tilesInX - 1) tile.Neighbors.Add(_tiles[i + _tilesInZ]);
         }
     }
 }
