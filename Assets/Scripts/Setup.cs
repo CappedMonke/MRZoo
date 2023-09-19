@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.SpatialAwareness;
 using Microsoft.MixedReality.Toolkit.SpatialAwareness.Processing;
+using Microsoft.MixedReality.Toolkit.UI;
 using UnityEngine;
 
 public class Setup : MonoBehaviour
 {
     public GameObject GameBoard;
-    
-    public void InitializeGame()
+
+    private void Start()
     {
         CoreServices.SpatialAwarenessSystem.ResumeObservers();
     }
-    
+
     public void SetupGame()
     {
         SetupGameBoard();
