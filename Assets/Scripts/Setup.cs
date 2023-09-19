@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.SpatialAwareness;
 using Microsoft.MixedReality.Toolkit.SpatialAwareness.Processing;
-using Microsoft.MixedReality.Toolkit.UI;
 using UnityEngine;
 
 public class Setup : MonoBehaviour
 {
-    public GameObject GameBoard;
+    [SerializeField] private GameBoard GameBoard;
 
     private void Start()
     {
@@ -35,13 +34,13 @@ public class Setup : MonoBehaviour
             listMeshData.Add(meshData);
         }
 
-        // SELF INFO: If it does not work, consider not using main thread for FindPlanes()
+        // SELF INFO:   If it does not work, consider not using main thread for FindPlanes()
         var planes = PlaneFinding.FindPlanes(listMeshData);
         
         // ShowAllPlanes(planes);
         
         var tablePlane = FilterPlanesForPlaneAtGaze(planes);
-        PlaceGameBoard(tablePlane);
+        GameBoard.Setup(tablePlane.Bounds);
     }
     
     private static BoundedPlane FilterPlanesForPlaneAtGaze(IEnumerable<BoundedPlane> planes)
@@ -78,20 +77,7 @@ public class Setup : MonoBehaviour
         return tablePlane;
     }
     
-    private void PlaceGameBoard(BoundedPlane tablePlane)
-    {
-        GameBoard.SetActive(true);
-        
-        GameBoard.transform.position = tablePlane.Bounds.Center;
-        GameBoard.transform.rotation = tablePlane.Bounds.Rotation;
-        GameBoard.transform.localScale = new Vector3(
-            tablePlane.Bounds.Extents.x * 2,
-            0.01f,
-            tablePlane.Bounds.Extents.y * 2
-        );
-    }
-    
-    // Visual representation of all planes (not used)
+    // Visual representation of all planes (not in use)
     private void ShowAllPlanes(IEnumerable<BoundedPlane> planes)
     {
         foreach (var plane in planes)
