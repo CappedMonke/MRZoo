@@ -1,0 +1,14 @@
+Open Utilites Scene of UX Sample in Editor and with Hololens
+Material Gallery for Tailes, also Outline Examples could be of great use
+SpatialAwareness Sample
+Solvers Samples
+PulseShader Samples
+Look and pinch could be great to show animals stats? Combined with outline when looking at an animal.
+Eye tracking Samples
+
+CoreServices.DiagnosticsSystem.ShowDiagnostics = false;
+
+CoreServices.DiagnosticsSystem.ShowProfiler = false;
+
+Boundary Sample
+Audio Samples
