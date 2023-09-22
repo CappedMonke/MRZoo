@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,8 +6,9 @@ public class GameboardGrid : MonoBehaviour
 {
     [SerializeField] private GameObject TilePrefab;
     [SerializeField] private float TileSize = 0.05f;
-    [SerializeField] float MinBorder = 0.02f;
-    [SerializeField] List<Tile> Tiles = new();
+    [SerializeField] private float MinBorder = 0.02f;
+    [SerializeField] private float TileSpawnRate = 0.1f;
+    [SerializeField] private List<Tile> Tiles = new();
     
     public void Setup(Vector2 tableSize)
     {
@@ -48,6 +50,7 @@ public class GameboardGrid : MonoBehaviour
             for (var x = 0; x < tilesPerDimension.x; x++)
             {
                 var currentTile = Tiles[x + y * (int)tilesPerDimension.x];
+                currentTile.gameObject.SetActive(false); // Set inactive so we can make it look cool when starting to tween
 
                 // Calculate final border
                 border = new Vector2(
@@ -57,14 +60,15 @@ public class GameboardGrid : MonoBehaviour
                 
                 currentTile.transform.localPosition = new Vector3(
                     x * TileSize + TileSize * 0.5f - tableSize.x * 0.5f + border.x / 2,
-                    currentTile.transform.localScale.y * 0.5f,
+                    0 + 0.001f, // 0.001f is the offset to prevent clipping. If a cube is used, exchange this for currentTile.transform.localScale.y * 0.5f
                     y * TileSize + TileSize * 0.5f - tableSize.y * 0.5f + border.y / 2
                 );
                 
+                // Because planes are scaled x10 we descale it, if a cube is used, remove this
                 currentTile.transform.localScale = new Vector3(
-                    TileSize,
-                    currentTile.transform.localScale.y,
-                    TileSize
+                    TileSize / 10,
+                    currentTile.transform.localScale.y, // planes don't scale in y-axis
+                    TileSize / 10
                 );
 
                 if(x > 0) currentTile.Neighbors.Add(Tiles[x - 1 + y * (int)tilesPerDimension.x]);
@@ -72,6 +76,19 @@ public class GameboardGrid : MonoBehaviour
                 if(y > 0) currentTile.Neighbors.Add(Tiles[x + (y - 1) * (int)tilesPerDimension.x]);
                 if(y < tilesPerDimension.y - 1) currentTile.Neighbors.Add(Tiles[x + (y + 1) * (int)tilesPerDimension.x]);
             }
+        }
+
+        StartCoroutine(SpawnTiles());
+    }
+
+    private IEnumerator SpawnTiles()
+    {
+        foreach (var tile in Tiles)
+        {
+            tile.gameObject.SetActive(true);
+            StartCoroutine(tile.Spawn());
+            
+            yield return new WaitForSeconds(TileSpawnRate);
         }
     }
 }

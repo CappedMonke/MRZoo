@@ -675,6 +675,10 @@ PrefabInstance:
       propertyPath: MinBorder
       value: 0.02
       objectReference: {fileID: 0}
+    - target: {fileID: 486154156856806772, guid: 9942c4e65b7ef0c4898ea6b6d8a13b78, type: 3}
+      propertyPath: TileSpawnRate
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 3730654625670690824, guid: 9942c4e65b7ef0c4898ea6b6d8a13b78, type: 3}
       propertyPath: m_Name
       value: Gameboard
