@@ -9,11 +9,11 @@ public class Gameboard : MonoBehaviour
     {
         var tableTopCenter = tableTransform.position + new Vector3(
             0f,
-            tableTransform.localScale.y * 0.5f + 0.001f, // Offset of 0.001 to prevent clipping
+            tableTransform.localScale.y * 0.5f,
             0f
         );
-        
-        transform.position = tableTopCenter;
+
+        transform.position = Utilities.RotatePointAroundPivot(tableTopCenter, tableTransform.position, tableTransform.rotation);
         transform.rotation = tableTransform.rotation;
 
         var tableSize = new Vector2(tableTransform.localScale.x, tableTransform.localScale.z);
