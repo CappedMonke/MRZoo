@@ -3,8 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(GameboardGrid))]
 public class Gameboard : MonoBehaviour
 {
-    [SerializeField] private float TileSize = 0.05f;
-    
     private GameboardGrid _gameboardGrid;
     
     public void Setup(Transform tableTransform)
@@ -20,6 +18,6 @@ public class Gameboard : MonoBehaviour
 
         var tableSize = new Vector2(tableTransform.localScale.x, tableTransform.localScale.z);
         _gameboardGrid = gameObject.GetComponent<GameboardGrid>();
-        _gameboardGrid.Setup(tableSize, TileSize);
+        _gameboardGrid.Setup(tableSize);
     }
 }
