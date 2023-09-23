@@ -12,20 +12,12 @@ public class Tile : MonoBehaviour
     public IEnumerator Spawn()
     {
         var elapsedTime = 0f;
-        var meshColor = MeshRenderer.material.color;
         var originalScale = transform.localScale;
         
         while (elapsedTime < SpawnTime)
         {
             var t = elapsedTime / SpawnTime;
             
-            MeshRenderer.material.color = new Color(
-                meshColor.r,
-                meshColor.g,
-                meshColor.b,
-                0
-            );
-
             transform.localScale = new Vector3(
                 Mathf.Lerp(0, originalScale.x, t),
                 Mathf.Lerp(0, originalScale.y, t),
@@ -36,18 +28,7 @@ public class Tile : MonoBehaviour
 
             yield return null;
         }
-        
-        MeshRenderer.material.color = new Color(
-            meshColor.r,
-            meshColor.g,
-            meshColor.b,
-            1
-        );
 
-        yield return transform.localScale = new Vector3(
-            originalScale.x,
-            originalScale.y,
-            originalScale.z
-        );
+        transform.localScale = originalScale;
     }
 }
