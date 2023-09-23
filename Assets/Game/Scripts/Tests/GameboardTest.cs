@@ -10,6 +10,6 @@ public class GameboardTest : MonoBehaviour
 
     private void Start()
     {
-        Gameboard.Setup(TableTransform);
+        // Gameboard.Setup(TableTransform);
     }
 }

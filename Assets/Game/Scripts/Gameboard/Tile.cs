@@ -23,7 +23,7 @@ public class Tile : MonoBehaviour
                 meshColor.r,
                 meshColor.g,
                 meshColor.b,
-                Mathf.Lerp(0, 1, t)
+                0
             );
 
             transform.localScale = new Vector3(
@@ -36,5 +36,18 @@ public class Tile : MonoBehaviour
 
             yield return null;
         }
+        
+        MeshRenderer.material.color = new Color(
+            meshColor.r,
+            meshColor.g,
+            meshColor.b,
+            1
+        );
+
+        yield return transform.localScale = new Vector3(
+            originalScale.x,
+            originalScale.y,
+            originalScale.z
+        );
     }
 }

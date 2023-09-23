@@ -60,15 +60,14 @@ public class GameboardGrid : MonoBehaviour
                 
                 currentTile.transform.localPosition = new Vector3(
                     x * TileSize + TileSize * 0.5f - tableSize.x * 0.5f + border.x / 2,
-                    0 + 0.001f, // 0.001f is the offset to prevent clipping. If a cube is used, exchange this for currentTile.transform.localScale.y * 0.5f
+                    currentTile.transform.localScale.y * 0.5f,
                     y * TileSize + TileSize * 0.5f - tableSize.y * 0.5f + border.y / 2
                 );
                 
-                // Because planes are scaled x10 we descale it, if a cube is used, remove this
                 currentTile.transform.localScale = new Vector3(
-                    TileSize / 10,
-                    currentTile.transform.localScale.y, // planes don't scale in y-axis
-                    TileSize / 10
+                    TileSize,
+                    currentTile.transform.localScale.y,
+                    TileSize
                 );
 
                 if(x > 0) currentTile.Neighbors.Add(Tiles[x - 1 + y * (int)tilesPerDimension.x]);
