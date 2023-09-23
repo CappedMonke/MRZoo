@@ -60,7 +60,7 @@ public class GameboardGrid : MonoBehaviour
                 
                 currentTile.transform.localPosition = new Vector3(
                     x * TileSize + TileSize * 0.5f - tableSize.x * 0.5f + border.x / 2,
-                    currentTile.transform.localScale.y * 0.5f,
+                    currentTile.transform.localPosition.y + currentTile.transform.localScale.y * 0.5f, // Add offset to prevent clipping
                     y * TileSize + TileSize * 0.5f - tableSize.y * 0.5f + border.y / 2
                 );
                 
