@@ -1,28 +1,24 @@
 using System.Collections.Generic;
 using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Experimental.SpatialAwareness;
-using Microsoft.MixedReality.Toolkit.SpatialAwareness;
 using Microsoft.MixedReality.Toolkit.UI;
 using Microsoft.MixedReality.Toolkit.WindowsSceneUnderstanding.Experimental;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class TableFinder : MonoBehaviour
 {
     [SerializeField] private GameObject EmptyTableButtonPrefab;
     [SerializeField] private GameObject GameboardPrefab;
 
-    private Dictionary<int, GameObject> emptyButtons = new();
+    private List<GameObject> emptyButtons = new();
     
 
     public void SpawnTableSelection(SpatialAwarenessSceneObject table, int id)
     {
-        if (emptyButtons.ContainsKey(id))
-        {
-            emptyButtons.Remove(id);
-        }
-        
         var emptyTableButton = Instantiate(EmptyTableButtonPrefab, transform, true);
+        emptyButtons.Add(emptyTableButton);
+        emptyTableButton.GetComponent<Interactable>().OnClick.AddListener(() => SpawnGameboard(table));
+        
         emptyTableButton.transform.position = new Vector3(
             table.Position.x,
             table.Position.y + 0.005f,
@@ -35,16 +31,13 @@ public class TableFinder : MonoBehaviour
             emptyTableButton.transform.localScale.y,
             table.Quads[0].Extents.y
         );
-        
-        emptyButtons.Add(id, emptyTableButton);
-        emptyTableButton.GetComponent<Interactable>().OnClick.AddListener(() => SpawnGameboard(table));
     }
     
     private void SpawnGameboard(SpatialAwarenessSceneObject selectedTable)
     {
         foreach (var button in emptyButtons)
         {
-            Destroy(button.Value);
+            Destroy(button);
             emptyButtons.Clear();
         }
         
@@ -53,7 +46,10 @@ public class TableFinder : MonoBehaviour
         {
             Debug.LogError("Observer is null. Scene understanding might not be supported on the device.");
         }
+        
+        observer.ClearObservations();
         observer.AutoUpdate = false;
+        CoreServices.SpatialAwarenessSystem.Disable();
         
         var gameboardGameObject = Instantiate(GameboardPrefab, transform.parent, true);
         var gameboard = gameboardGameObject.GetComponent<Gameboard>();

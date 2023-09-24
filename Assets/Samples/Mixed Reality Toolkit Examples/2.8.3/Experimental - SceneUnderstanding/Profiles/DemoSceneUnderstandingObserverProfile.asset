@@ -31,10 +31,10 @@ MonoBehaviour:
   requestPlaneData: 1
   requestMeshData: 0
   inferRegions: 0
-  firstAutoUpdateDelay: 1
+  firstAutoUpdateDelay: 5
   worldMeshLevelOfDetail: 2
   usePersistentObjects: 0
   queryRadius: 10
   requestOcclusionMask: 0
   occlusionMaskResolution: {x: 256, y: 256}
-  orientScene: 1
+  orientScene: 0
