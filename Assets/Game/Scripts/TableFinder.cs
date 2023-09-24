@@ -12,23 +12,17 @@ public class TableFinder : MonoBehaviour
     [SerializeField] private GameObject EmptyTableButtonPrefab;
     [SerializeField] private GameObject GameboardPrefab;
 
-    private Dictionary<int, GameObject> emptyButtons = new();
+    private List<GameObject> emptyButtons = new();
     
 
-    public void SpawnTableSelection(SpatialAwarenessSceneObject table, int id)
+    public void SpawnTableSelection(SpatialAwarenessSceneObject table)
     {
-        if (emptyButtons.ContainsKey(id))
-        {
-            emptyButtons.Remove(id);
-        }
-        
         var emptyTableButton = Instantiate(EmptyTableButtonPrefab, transform, true);
         emptyTableButton.transform.position = new Vector3(
             table.Position.x,
             table.Position.y + 0.005f,
             table.Position.z
         );
-        
         emptyTableButton.transform.rotation = table.Rotation;
         emptyTableButton.transform.localScale = new Vector3(
             table.Quads[0].Extents.x,
@@ -36,16 +30,15 @@ public class TableFinder : MonoBehaviour
             table.Quads[0].Extents.y
         );
         
-        emptyButtons.Add(id, emptyTableButton);
+        emptyButtons.Add(emptyTableButton);
         emptyTableButton.GetComponent<Interactable>().OnClick.AddListener(() => SpawnGameboard(table));
     }
-    
+
     private void SpawnGameboard(SpatialAwarenessSceneObject selectedTable)
     {
         foreach (var button in emptyButtons)
         {
-            Destroy(button.Value);
-            emptyButtons.Clear();
+            Destroy(button);
         }
         
         var observer = CoreServices.GetSpatialAwarenessSystemDataProvider<WindowsSceneUnderstandingObserver>();
