@@ -59,9 +59,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Samples/Mixed Reality Toolkit Examples/2.8.3/Demos - Solvers/Scenes/SurfaceMagnetismSpatialAwarenessExample.unity
     guid: 8feae87497f549c4e8dc08a6e4b7b15c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Samples/Mixed Reality Toolkit Examples/2.8.3/Experimental - SceneUnderstanding/Scenes/SceneUnderstandingExample.unity
     guid: d42a352dc9a8c4d4990a924687759199
+  - enabled: 1
+    path: Assets/Game/Scenes/MainGame.unity
+    guid: 66a54b2664714c04f93e09eb76483876
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 1ce40465282fd954da2056d543162ed3, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ca6cf824924c9d5439287b0828546fd1, type: 2}

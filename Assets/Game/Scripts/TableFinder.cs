@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Experimental.SpatialAwareness;
 using Microsoft.MixedReality.Toolkit.SpatialAwareness;
 using Microsoft.MixedReality.Toolkit.UI;
+using Microsoft.MixedReality.Toolkit.WindowsSceneUnderstanding.Experimental;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -38,6 +40,13 @@ public class TableFinder : MonoBehaviour
         {
             Destroy(button);
         }
+        
+        var observer = CoreServices.GetSpatialAwarenessSystemDataProvider<WindowsSceneUnderstandingObserver>();
+        if (observer == null)
+        {
+            Debug.LogError("Observer is null. Scene understanding might not be supported on the device.");
+        }
+        observer.AutoUpdate = false;
         
         var gameboardGameObject = Instantiate(GameboardPrefab, transform.parent, true);
         var gameboard = gameboardGameObject.GetComponent<Gameboard>();
