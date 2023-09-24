@@ -1,7 +1,9 @@
 ﻿// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+using System;
 using Microsoft.MixedReality.Toolkit.Input;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -17,9 +19,11 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos
         [SerializeField]
         private float rotateSpeed = 300.0f;
 
-        void IMixedRealityTouchHandler.OnTouchUpdated(HandTrackingInputEventData eventData)
+        public bool IsRotating = false;
+        
+        public void Update()
         {
-            if (targetObjectTransform != null)
+            if (targetObjectTransform != null && IsRotating)
             {
                 targetObjectTransform.Rotate(Vector3.up * (rotateSpeed * Time.deltaTime));
             }

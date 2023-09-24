@@ -31,4 +31,18 @@ public class Tile : MonoBehaviour
 
         transform.localScale = originalScale;
     }
+
+    public void PlaceSomething()
+    {
+        var item = GameLogic.Instance.CurrentHeldItem;
+        if (item == null)
+        {
+            return;
+        }
+
+        if (item.Type == HandMenuItem.ItemType.Ground)
+        {
+            MeshRenderer.material = item.MeshRenderer.material;
+        }
+    }
 }

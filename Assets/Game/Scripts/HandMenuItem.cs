@@ -1,20 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+using Microsoft.MixedReality.Toolkit.Examples.Demos;
 using UnityEngine;
 
 public class HandMenuItem : MonoBehaviour
 {
-    [SerializeField] private MeshFilter Mesh;
-    [SerializeField] private ItemType Type = ItemType.Placeable;
+    public MeshFilter Mesh;
+    public MeshRenderer MeshRenderer;
+    public HandInteractionTouchRotate HandInteractionTouchRotate;
+    public ItemType Type = ItemType.Placeable;
 
-    private enum ItemType
+    public enum ItemType
     {
         Ground,
         Placeable
     }
     
-    public void CreateItem()
+    public void SetCurrentlyHeldItem()
     {
-        
+        GameLogic.Instance.CurrentHeldItem = this;
+        HandInteractionTouchRotate.IsRotating = true;
     }
 }

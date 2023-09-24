@@ -346,7 +346,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2494592426238543678}
         m_TargetAssemblyTypeName: HandMenuItem, Assembly-CSharp
-        m_MethodName: CreateItem
+        m_MethodName: SetCurrentlyHeldItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -376,6 +376,7 @@ MonoBehaviour:
       m_Calls: []
   targetObjectTransform: {fileID: 575815711773666751}
   rotateSpeed: 100
+  IsRotating: 0
 --- !u!82 &8471354852142090289
 AudioSource:
   m_ObjectHideFlags: 0
@@ -624,3 +625,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mesh: {fileID: 4529112969571514619}
+  MeshRenderer: {fileID: 7072262025392301732}
+  HandInteractionTouchRotate: {fileID: 8463920663617603386}
+  Type: 1
