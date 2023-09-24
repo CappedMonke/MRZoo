@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Examples.Demos;
@@ -9,6 +8,8 @@ using UnityEngine;
 
 public class SceneUnderstandingController : DemoSpatialMeshHandler, IMixedRealitySpatialAwarenessObservationHandler<SpatialAwarenessSceneObject>
 {
+    [SerializeField] private TableFinder TableFinder;
+    
     private WindowsSceneUnderstandingObserver observer;
     private Dictionary<SpatialAwarenessSurfaceTypes, Dictionary<int, SpatialAwarenessSceneObject>> observedSceneObjects = new();
     
@@ -21,6 +22,8 @@ public class SceneUnderstandingController : DemoSpatialMeshHandler, IMixedRealit
             Debug.LogError("Observer is null. Scene understanding might not be supported on the device.");
         }
     }
+
+    #region Overrides
 
     protected override void OnEnable()
     {
@@ -36,6 +39,8 @@ public class SceneUnderstandingController : DemoSpatialMeshHandler, IMixedRealit
     {
         UnregisterEventHandlers<IMixedRealitySpatialAwarenessObservationHandler<SpatialAwarenessSceneObject>, SpatialAwarenessSceneObject>();
     }
+
+    #endregion
     
     public void OnObservationAdded(MixedRealitySpatialAwarenessEventData<SpatialAwarenessSceneObject> eventData)
     {
@@ -49,7 +54,14 @@ public class SceneUnderstandingController : DemoSpatialMeshHandler, IMixedRealit
         {
             observedSceneObjects.Add(eventData.SpatialObject.SurfaceType, new Dictionary<int, SpatialAwarenessSceneObject> { { eventData.Id, eventData.SpatialObject } });
         }
+        
+        if (eventData.SpatialObject.SurfaceType == SpatialAwarenessSurfaceTypes.Platform)
+        {
+            TableFinder.SpawnTableSelection(eventData.SpatialObject);
+        }
     }
+
+    #region Not used yet
 
     public void OnObservationUpdated(MixedRealitySpatialAwarenessEventData<SpatialAwarenessSceneObject> eventData)
     {
@@ -97,4 +109,6 @@ public class SceneUnderstandingController : DemoSpatialMeshHandler, IMixedRealit
     {
         observer.UpdateOnDemand();
     }
+
+    #endregion
 }

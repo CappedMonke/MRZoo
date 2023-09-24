@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(GameboardGrid))]
 public class Gameboard : MonoBehaviour
 {
     private GameboardGrid _gameboardGrid;
@@ -19,7 +18,7 @@ public class Gameboard : MonoBehaviour
         transform.rotation = tableRotation;
 
         var tableSize = new Vector2(tableScale.x, tableScale.z);
-        _gameboardGrid = gameObject.GetComponent<GameboardGrid>();
+        _gameboardGrid = gameObject.GetComponentInChildren<GameboardGrid>();
         _gameboardGrid.Setup(tableSize);
     }
 }
