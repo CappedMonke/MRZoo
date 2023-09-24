@@ -53,11 +53,11 @@ public class SceneUnderstandingController : DemoSpatialMeshHandler, IMixedRealit
         else
         {
             observedSceneObjects.Add(eventData.SpatialObject.SurfaceType, new Dictionary<int, SpatialAwarenessSceneObject> { { eventData.Id, eventData.SpatialObject } });
-            
-            if (eventData.SpatialObject.SurfaceType == SpatialAwarenessSurfaceTypes.Platform)
-            {
-                TableFinder.SpawnTableSelection(eventData.SpatialObject);
-            }
+        }
+        
+        if (eventData.SpatialObject.SurfaceType == SpatialAwarenessSurfaceTypes.Platform)
+        {
+            TableFinder.SpawnTableSelection(eventData.SpatialObject, eventData.Id);
         }
     }
     
