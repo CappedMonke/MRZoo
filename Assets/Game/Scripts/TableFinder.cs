@@ -47,6 +47,8 @@ public class TableFinder : MonoBehaviour
             Debug.LogError("Observer is null. Scene understanding might not be supported on the device.");
         }
         observer.AutoUpdate = false;
+        observer.ClearObservations();
+        CoreServices.SpatialAwarenessSystem.Disable();
         
         var gameboardGameObject = Instantiate(GameboardPrefab, transform.parent, true);
         var gameboard = gameboardGameObject.GetComponent<Gameboard>();
