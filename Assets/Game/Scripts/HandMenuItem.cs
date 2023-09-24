@@ -5,7 +5,6 @@ public class HandMenuItem : MonoBehaviour
 {
     public MeshFilter Mesh;
     public MeshRenderer MeshRenderer;
-    public HandInteractionTouchRotate HandInteractionTouchRotate;
     public ItemType Type = ItemType.Placeable;
 
     public enum ItemType
@@ -17,6 +16,5 @@ public class HandMenuItem : MonoBehaviour
     public void SetCurrentlyHeldItem()
     {
         GameLogic.Instance.CurrentHeldItem = this;
-        HandInteractionTouchRotate.IsRotating = true;
     }
 }
