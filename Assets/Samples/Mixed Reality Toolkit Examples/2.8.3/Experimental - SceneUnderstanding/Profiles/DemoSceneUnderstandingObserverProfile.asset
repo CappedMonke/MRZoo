@@ -30,10 +30,10 @@ MonoBehaviour:
   createGameObjects: 1
   requestPlaneData: 1
   requestMeshData: 0
-  inferRegions: 1
+  inferRegions: 0
   firstAutoUpdateDelay: 1
   worldMeshLevelOfDetail: 2
-  usePersistentObjects: 1
+  usePersistentObjects: 0
   queryRadius: 10
   requestOcclusionMask: 0
   occlusionMaskResolution: {x: 256, y: 256}
