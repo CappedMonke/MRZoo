@@ -10,9 +10,7 @@ public class GameLogic : MonoBehaviour
     // I don't check against null or anything because it is a minimal project. Also I don't have any more time to spend.
     public static GameLogic Instance;
 
-    public static GameObject CurrentHeldItem;
-
-    private IMixedRealityHand hand;
+    public Item CurrentHeldItem;
     
     private void Start()
     {

@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class HandMenuItem : MonoBehaviour
 {
-    [SerializeField] private MeshFilter Mesh;
-    [SerializeField] private ItemType Type = ItemType.Placeable;
+    public GameObject Item;
 
-    private enum ItemType
+    public void OnItemSelected()
     {
-        Ground,
-        Placeable
-    }
-    
-    public void CreateItem()
-    {
+        GameLogic.Instance.CurrentHeldItem = Item.GetComponent<Item>();
         
+        var itemClone = Instantiate(Item, transform, true);
+
+        Item.transform.parent = GameObject.FindObjectOfType<Gameboard>().transform;
+
+        Item = itemClone;
     }
 }
