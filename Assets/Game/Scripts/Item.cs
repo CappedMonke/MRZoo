@@ -51,11 +51,16 @@ public class Item : MonoBehaviour
         
         if (Type == ItemType.Object && !tile.HasObject)
         {
-            transform.position = tile.transform.position;
             transform.localScale = new Vector3(
                 tile.transform.localScale.x / 2,
                 tile.transform.localScale.x / 2,
                 tile.transform.localScale.x / 2
+            );
+
+            transform.position = new Vector3(
+                tile.transform.position.x,
+                tile.transform.position.y + transform.localScale.y / 2,
+                tile.transform.position.z
             );
 
             Destroy(GetComponent<NearInteractionGrabbable>());
