@@ -1,4 +1,5 @@
 using System;
+using Microsoft.MixedReality.Toolkit.Input;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -18,8 +19,6 @@ public class Item : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision");
-        
         var tempTile = other.gameObject.GetComponent<Tile>();
 
         if (tempTile == null)
@@ -53,7 +52,14 @@ public class Item : MonoBehaviour
         if (Type == ItemType.Object && !tile.HasObject)
         {
             transform.position = tile.transform.position;
+            transform.localScale = new Vector3(
+                tile.transform.localScale.x / 2,
+                tile.transform.localScale.x / 2,
+                tile.transform.localScale.x / 2
+            );
 
+            Destroy(GetComponent<NearInteractionGrabbable>());
+            Destroy(GetComponent<Rigidbody>());
             Destroy(GetComponent<BoxCollider>());
             
             tile.HasObject = true;

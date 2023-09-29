@@ -3029,7 +3029,7 @@ PrefabInstance:
       objectReference: {fileID: -3318234739251783190, guid: a5aa9473e28570748b179c388f2a7ad1, type: 3}
     - target: {fileID: 1169123521385473709, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1215270775190496497, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3089,7 +3089,7 @@ PrefabInstance:
       objectReference: {fileID: -3318234739251783190, guid: a5aa9473e28570748b179c388f2a7ad1, type: 3}
     - target: {fileID: 4690306164055095582, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4904872331783532345, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4646,7 +4646,7 @@ PrefabInstance:
       objectReference: {fileID: 682789918060435635, guid: d17a78945443cd348b829f9d02ec2d38, type: 3}
     - target: {fileID: 1169123521385473709, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1215270775190496497, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4706,7 +4706,7 @@ PrefabInstance:
       objectReference: {fileID: 682789918060435635, guid: d17a78945443cd348b829f9d02ec2d38, type: 3}
     - target: {fileID: 4690306164055095582, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4904872331783532345, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4909,7 +4909,7 @@ PrefabInstance:
     - target: {fileID: 7143505858741141223, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: constraintsManager
       value: 
-      objectReference: {fileID: 8318020501941707306}
+      objectReference: {fileID: 4489478335384135504}
     - target: {fileID: 7484067870982258312, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_text
       value: Bear
@@ -4959,6 +4959,17 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8058505536502095144, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
   m_PrefabInstance: {fileID: 6157983055349050402}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4489478335384135504 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7726022141612018546, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+  m_PrefabInstance: {fileID: 6157983055349050402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98de877dee5fc341b4eb59dfdab266c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4993369744486189711 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1169123521385473709, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
