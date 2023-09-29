@@ -3015,10 +3015,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56465458212290869}
     m_Modifications:
+    - target: {fileID: 18451184373236940, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 148174388794069374, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1036773668712751105, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3318234739251783190, guid: a5aa9473e28570748b179c388f2a7ad1, type: 3}
     - target: {fileID: 1169123521385473709, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3095,6 +3103,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6372528795474001233, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372528795474001233, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.43
+      objectReference: {fileID: 0}
     - target: {fileID: 7072262025392301732, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3170,8 +3186,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterials:
-  - {fileID: 2100000, guid: ce75f501976315943adae072ce16d52f, type: 2}
+  - {fileID: -4770390735465466038, guid: 146a06bf31682084daae92da13212495, type: 3}
   cacheSharedMaterialsFromRenderer: 0
+--- !u!114 &8318020501941707306 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7726022141612018546, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+  m_PrefabInstance: {fileID: 1754103296130328920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98de877dee5fc341b4eb59dfdab266c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &8611519867298346096 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8058505536502095144, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
@@ -3185,6 +3212,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56465458212290869}
     m_Modifications:
+    - target: {fileID: 18451184373236940, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1036773668712751105, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8839871022679535818, guid: d797684686a18814c98c9a322168e6a9, type: 3}
     - target: {fileID: 1215270775190496497, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3253,9 +3288,25 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6372528795474001233, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372528795474001233, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13
+      objectReference: {fileID: 0}
     - target: {fileID: 7072262025392301732, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143505858741141223, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: constraintsManager
+      value: 
+      objectReference: {fileID: 8318020501941707306}
+    - target: {fileID: 7484067870982258312, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_text
+      value: Wolf
       objectReference: {fileID: 0}
     - target: {fileID: 8058505536502095144, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3325,7 +3376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterials:
-  - {fileID: 2100000, guid: ce75f501976315943adae072ce16d52f, type: 2}
+  - {fileID: 2100000, guid: 247d4b3274af6bb44a47bdb9bc190c9d, type: 2}
   cacheSharedMaterialsFromRenderer: 0
 --- !u!1001 &4292617367596431267
 PrefabInstance:
@@ -3335,6 +3386,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56465458212290869}
     m_Modifications:
+    - target: {fileID: 18451184373236940, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1036773668712751105, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2380272882638725353, guid: c5a10f533c249844695787462572f110, type: 3}
     - target: {fileID: 1215270775190496497, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3403,10 +3462,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6372528795474001233, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.46
+      objectReference: {fileID: 0}
     - target: {fileID: 7072262025392301732, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7143505858741141223, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: constraintsManager
+      value: 
+      objectReference: {fileID: 5812503300562992337}
     - target: {fileID: 7484067870982258312, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_text
       value: Deer
@@ -3451,6 +3518,17 @@ MonoBehaviour:
   defaultMaterials:
   - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   cacheSharedMaterialsFromRenderer: 0
+--- !u!114 &5812503300562992337 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7726022141612018546, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+  m_PrefabInstance: {fileID: 4292617367596431267}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98de877dee5fc341b4eb59dfdab266c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &6073069833803016843 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8058505536502095144, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
@@ -3479,7 +3557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterials:
-  - {fileID: 2100000, guid: ce75f501976315943adae072ce16d52f, type: 2}
+  - {fileID: -4770390735465466038, guid: 146a06bf31682084daae92da13212495, type: 3}
   cacheSharedMaterialsFromRenderer: 0
 --- !u!1001 &4452580403166494533
 PrefabInstance:
@@ -3629,7 +3707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterials:
-  - {fileID: 2100000, guid: ce75f501976315943adae072ce16d52f, type: 2}
+  - {fileID: 2100000, guid: e725cd86b2492d949b47980e68c00b6a, type: 2}
   cacheSharedMaterialsFromRenderer: 0
 --- !u!1001 &4519740252659874998
 PrefabInstance:
@@ -3779,7 +3857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterials:
-  - {fileID: 2100000, guid: ce75f501976315943adae072ce16d52f, type: 2}
+  - {fileID: 2100000, guid: e79e8a8e1eb8afa4d9f639bc42947084, type: 2}
   cacheSharedMaterialsFromRenderer: 0
 --- !u!1001 &4936991461217814737
 PrefabInstance:
@@ -3894,7 +3972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterials:
-  - {fileID: 2100000, guid: ce75f501976315943adae072ce16d52f, type: 2}
+  - {fileID: 2100000, guid: 2c6fe5a88e12f774ba5c34d13afeb590, type: 2}
   cacheSharedMaterialsFromRenderer: 0
 --- !u!23 &615603548654267338 stripped
 MeshRenderer:
@@ -4049,7 +4127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterials:
-  - {fileID: 2100000, guid: ce75f501976315943adae072ce16d52f, type: 2}
+  - {fileID: 2100000, guid: ebe5030d125bb6a4ab11e4b6e347827d, type: 2}
   cacheSharedMaterialsFromRenderer: 0
 --- !u!23 &2880441806577742781 stripped
 MeshRenderer:
@@ -4376,6 +4454,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56465458212290869}
     m_Modifications:
+    - target: {fileID: 18451184373236940, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1036773668712751105, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2012753172922253885, guid: ceec5538f6294f04988cb8b0e4fa34c7, type: 3}
     - target: {fileID: 1215270775190496497, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4448,10 +4534,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6372528795474001233, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372528795474001233, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.49
+      objectReference: {fileID: 0}
     - target: {fileID: 7072262025392301732, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7143505858741141223, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: constraintsManager
+      value: 
+      objectReference: {fileID: 8318020501941707306}
     - target: {fileID: 7484067870982258312, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_text
       value: Fox
@@ -4489,7 +4587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterials:
-  - {fileID: 2100000, guid: ce75f501976315943adae072ce16d52f, type: 2}
+  - {fileID: 2100000, guid: 4a7b66a2c63d7dc4c8821c866f474177, type: 2}
   cacheSharedMaterialsFromRenderer: 0
 --- !u!23 &2099358955145370625 stripped
 MeshRenderer:
@@ -4534,10 +4632,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56465458212290869}
     m_Modifications:
+    - target: {fileID: 18451184373236940, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 148174388794069374, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1036773668712751105, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 682789918060435635, guid: d17a78945443cd348b829f9d02ec2d38, type: 3}
     - target: {fileID: 1169123521385473709, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -4614,10 +4720,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6372528795474001233, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372528795474001233, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.19
+      objectReference: {fileID: 0}
     - target: {fileID: 7072262025392301732, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7143505858741141223, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: constraintsManager
+      value: 
+      objectReference: {fileID: 8318020501941707306}
     - target: {fileID: 7484067870982258312, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_text
       value: Rabbit
@@ -4659,7 +4777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterials:
-  - {fileID: 2100000, guid: ce75f501976315943adae072ce16d52f, type: 2}
+  - {fileID: 2100000, guid: 247d4b3274af6bb44a47bdb9bc190c9d, type: 2}
   cacheSharedMaterialsFromRenderer: 0
 --- !u!23 &2278116709845025511 stripped
 MeshRenderer:
@@ -4704,6 +4822,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56465458212290869}
     m_Modifications:
+    - target: {fileID: 18451184373236940, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1036773668712751105, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 3329136176600644168, guid: 5c33dfc9f6e79a241b7fee446fe6c2b8, type: 3}
     - target: {fileID: 1215270775190496497, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4768,10 +4894,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6372528795474001233, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372528795474001233, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7072262025392301732, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7143505858741141223, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
+      propertyPath: constraintsManager
+      value: 
+      objectReference: {fileID: 8318020501941707306}
     - target: {fileID: 7484067870982258312, guid: fa466e569c8482f4290e2ebc3d595911, type: 3}
       propertyPath: m_text
       value: Bear
@@ -4809,7 +4947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterials:
-  - {fileID: 2100000, guid: ce75f501976315943adae072ce16d52f, type: 2}
+  - {fileID: -4770390735465466038, guid: 146a06bf31682084daae92da13212495, type: 3}
   cacheSharedMaterialsFromRenderer: 0
 --- !u!23 &1836671844492758841 stripped
 MeshRenderer:

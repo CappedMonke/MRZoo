@@ -5,15 +5,15 @@ using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Input;
 using UnityEngine;
 
+// Maybe will be used, maybe won't
 public class GameLogic : MonoBehaviour
 {
-    // I don't check against null or anything because it is a minimal project. Also I don't have any more time to spend.
     public static GameLogic Instance;
-
-    public Item CurrentHeldItem;
     
     private void Start()
     {
         Instance = this;
+        
+        DontDestroyOnLoad(this);
     }
 }
