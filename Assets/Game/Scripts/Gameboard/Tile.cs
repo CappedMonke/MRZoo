@@ -1,14 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    [SerializeField] private MeshRenderer MeshRenderer;
+    public MeshRenderer MeshRenderer;
     [SerializeField] private float SpawnTime = 0.05f;
-    
-    public List<Tile> Neighbors;
 
+    public List<Tile> Neighbors;
+    public bool HasObject = false;
+    
     public IEnumerator Spawn()
     {
         var elapsedTime = 0f;

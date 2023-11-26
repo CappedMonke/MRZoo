@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TilePrefab: {fileID: 2309548469574962752, guid: c56e9b259a2066f40ae2b57bbcedb4fd, type: 3}
-  TileSize: 0.1
-  MinBorder: 0.08
+  TileSize: 0.12
+  MinBorder: 0.1
   TileSpawnRate: 0.04
   Tiles: []
 --- !u!1 &3730654625670690824

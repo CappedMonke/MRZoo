@@ -1,20 +1,15 @@
-using Microsoft.MixedReality.Toolkit.Examples.Demos;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class HandMenuItem : MonoBehaviour
 {
-    public MeshFilter Mesh;
-    public MeshRenderer MeshRenderer;
-    public ItemType Type = ItemType.Placeable;
+    public GameObject Item;
 
-    public enum ItemType
+    public void OnItemSelected()
     {
-        Ground,
-        Placeable
-    }
-    
-    public void SetCurrentlyHeldItem()
-    {
-        GameLogic.Instance.CurrentHeldItem = this;
+        var itemClone = Instantiate(Item, transform, true);
+        
+        Item = itemClone;
     }
 }
